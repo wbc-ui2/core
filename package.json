@@ -1,0 +1,100 @@
+{
+  "name": "@wbc-ui2/core",
+  "version": "1.0.0-r01",
+  "description": "Advanced Dynamic UI Engine for Vue 2 — Part of the @wbc-ui2 ecosystem",
+  "author": "Wissem Boughamoura <wissemb11@gmail.com> (https://www.wi-bg.com)",
+  "homepage": "https://github.com/wbc-ui2/core#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbc-ui2/core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wbc-ui2/core/issues"
+  },
+  "main": "dist/core2.umd.js",
+  "module": "dist/core2.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/core2.es.js",
+      "require": "./dist/core2.umd.js"
+    },
+    "./vite-plugin": "./vite-plugin.mjs",
+    "./vite-plugin.js": "./vite-plugin.mjs",
+    "./vite-plugin.mjs": "./vite-plugin.mjs",
+    "./wbc.webpack.js": "./wbc.webpack.js",
+    "./dist/*": "./dist/*"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "logo/",
+    "assets/",
+    "vite-plugin.mjs",
+    "wbc.webpack.js"
+  ],
+  "dependencies": {
+    "acorn": "^8.16.0",
+    "acorn-walk": "^8.3.5",
+    "bootstrap": "^4.6.2",
+    "dompurify": "^3.3.3",
+    "jsep": "^1.4.0",
+    "lz-string": "^1.5.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-code-copy": "^0.2.2",
+    "turndown": "^7.2.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.7.16",
+    "vue-router": "^3.0.0",
+    "vuetify": "^2.7.2",
+    "vuex": "^3.6.2",
+    "bootstrap-vue": "^2.22.0",
+    "vue-json-viewer": "^2.2.22",
+    "vue-cookies": "^1.8.3",
+    "vue-cryptojs": "^2.3.1",
+    "vue-dayjs": "^1.0.2"
+  },
+  "peerDependenciesMeta": {
+    "echarts": {
+      "optional": true
+    },
+    "mermaid": {
+      "optional": true
+    },
+    "codemirror": {
+      "optional": true
+    },
+    "vue-codemirror": {
+      "optional": true
+    },
+    "vue-cryptojs": {
+      "optional": true
+    },
+    "vue-dayjs": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "vue",
+    "vue2",
+    "ui-engine",
+    "dynamic-ui",
+    "wbc-ui",
+    "dynamic-components",
+    "no-code",
+    "low-code",
+    "json-driven",
+    "vuetify"
+  ],
+  "sideEffects": false
+}

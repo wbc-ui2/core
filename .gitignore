@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build artifacts (only if you decide not to commit dist-* folders)
+# Uncomment if dist-*/ should be excluded from the public repo:
+# dist/
+# dist-dev/
+# dist-free/
+# dist-pro/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+
+# Coverage / Testing
+coverage/
+.nyc_output/
+
+# Local Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# System & Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*~
+
+# Misc
+*.tgz
+*.tar.gz
