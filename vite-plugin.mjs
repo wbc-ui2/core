@@ -217,9 +217,17 @@ function monorepoDevConfigPlugin() {
             ];
 
             const depAliases = {};
+            // Only deps that ACTUALLY resolve get force-listed in optimizeDeps.include
+            // below. An app that doesn't install a heavy sibling dep (e.g. wb-press docs
+            // never pull pdfjs-dist / @vue-office/* / vue-doc-preview) would otherwise get
+            // Vite's "Cannot optimize dependency: X, present in optimizeDeps.include"
+            // warning for every unresolved entry. Aliases are still registered for all
+            // DEPS (harmless when never imported); pre-bundling is gated on resolution.
+            const resolvedDeps = new Set();
             DEPS.forEach(d => {
                 try {
                     depAliases[d] = path.dirname(require.resolve(`${d}/package.json`));
+                    resolvedDeps.add(d);
                 } catch (e) {
                     depAliases[d] = path.resolve(rootNodeModules, d);
                 }
@@ -322,7 +330,7 @@ function monorepoDevConfigPlugin() {
                 assetsInclude: ['**/*.xlsx', '**/*.xls', '**/*.doc', '**/*.docx', '**/*.ppt', '**/*.pptx', '**/*.zip', '**/*.pdf'],
                 optimizeDeps: {
                     entries: ['index.html'],
-                    include: [...DEPS.filter(d => !['vuetify', 'prettier'].includes(d)), 'vuetify/lib', 'lodash/debounce']
+                    include: [...DEPS.filter(d => resolvedDeps.has(d) && !['vuetify', 'prettier'].includes(d)), 'vuetify/lib', 'lodash/debounce']
                 },
                 css: {
                     preprocessorOptions: {

@@ -1,6 +1,6 @@
 {
   "name": "@wbc-ui2/core",
-  "version": "1.0.0-r01",
+  "version": "1.0.0-r02",
   "description": "Advanced Dynamic UI Engine for Vue 2 — Part of the @wbc-ui2 ecosystem",
   "author": "Wissem Boughamoura <wissemb11@gmail.com> (https://www.wi-bg.com)",
   "homepage": "https://github.com/wbc-ui2/core#readme",
@@ -96,5 +96,10 @@
     "json-driven",
     "vuetify"
   ],
-  "sideEffects": false
+  "sideEffects": [
+    "*.css",
+    "*.scss",
+    "*.sass",
+    "**/styles/**"
+  ]
 }
